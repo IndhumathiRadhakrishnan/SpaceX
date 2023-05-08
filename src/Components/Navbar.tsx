@@ -6,7 +6,7 @@ function Navbar(){
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
        <> <section>
-            <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 bg-green-200">
+            <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-black">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
 
@@ -55,7 +55,7 @@ function Navbar(){
                 </div>
             </nav>
         </section>
-        <section>
+        <section className="overflow-y-auto w-full h-full">
             <Outlet/>
         </section></>
     );

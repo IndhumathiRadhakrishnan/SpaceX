@@ -5,12 +5,74 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.btn {
+  background-color: #005288;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  position: relative;
+}
+
+.btn {
+  background-color: #005288;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  position: relative;
+}
+
+.btn .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #003D56;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.btn:hover .hover {
+  opacity: 1;
+}
+
+.btn .text {
+  position: relative;
+  z-index: 1;
+}
+
+.learn-more-button {
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+  transition: background-position 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-position: bottom;
+  background-size: 100% 200%;
+  background-image: linear-gradient(to top, black 50%, transparent 50%);
+}
+
+.learn-more-button:hover {
+  background-position: top;
+  color: black;
+  background-color: white
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

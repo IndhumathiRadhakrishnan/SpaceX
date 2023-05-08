@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css';
-import Rockets from './Containers/Rockets';
-import Launches from './Containers/Launches';
-import History from './Containers/History';
-import Home from './Containers/Home'
+import Rockets from './Containers/Rocket/Rockets';
+import Launches from './Containers/Launch/Launches';
+import History from './Containers/History/History';
+import Home from './Containers/Landing/Home'
 import Navbar from './Components/Navbar';
+import RocketDetails from './Containers/Rocket/RocketDetails';
+import LaunchDetails from './Containers/Launch/LaunchDetails';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Route path="/history" element={<History />} />
           <Route path="/launches" element={<Launches />} />
           <Route path="/rockets" element={<Rockets />} />
+          <Route path="/launches/:id" element={<LaunchDetails />} />
+          <Route path="/rockets/:id" element={<RocketDetails />} />
          </Route>
         </Routes>
       </BrowserRouter>
