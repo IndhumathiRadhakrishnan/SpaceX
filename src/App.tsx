@@ -5,7 +5,7 @@ import Rockets from './Containers/Rocket/Rockets';
 import Launches from './Containers/Launch/Launches';
 import History from './Containers/History/History';
 import Home from './Containers/Landing/Home'
-import Navbar from './Components/Navbar';
+import Navbar from './Components/NavBar';
 import RocketDetails from './Containers/Rocket/RocketDetails';
 import LaunchDetails from './Containers/Launch/LaunchDetails';
 

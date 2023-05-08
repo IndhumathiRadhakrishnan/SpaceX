@@ -7,6 +7,7 @@ import { useGetRocketsQuery } from "../../Services/rocketsApi"
 function Rockets(){
     const navigate = useNavigate();
     const { data: rocketsData } = useGetRocketsQuery()
+    console.log("rocketsData",rocketsData)
    
     return (
         <div className="bg-black w-full h-full text-white">

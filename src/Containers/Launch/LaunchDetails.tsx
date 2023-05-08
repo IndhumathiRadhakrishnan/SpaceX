@@ -7,7 +7,7 @@ function LaunchDetails(){
 
     const { id } = useParams()
     const { launchDetails, launchDetailsLoading } = useLaunchHook({ id })
-    
+    console.log("launchDetails",launchDetails?.crew, launchDetails)
     if(!launchDetails){
         return null
     }

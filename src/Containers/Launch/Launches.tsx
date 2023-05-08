@@ -3,56 +3,26 @@ import { useNavigate } from "react-router-dom"
 import ImageHolder from "../../Components/ImageHolder"
 import { LaunchSchema } from "../../Models/launch.model"
 import { formatDateToTimezone, formatTimeToTimezone } from "../../Utils/dateTime"
-import { ReactComponent as SEARCH_GLASS } from '../../Assets/search-icon.svg'
 import { useEffect, useState } from "react"
 import { useLaunchHook } from "../../Hooks/launchHook"
+import SearchBar from "../../Components/SearchBar"
 
 
 function Launches() {
     
     const navigate = useNavigate();
-    const { launchData, launchLoading } = useLaunchHook({})
-    const [showSearch, setShowSearch] =  useState(false)
-    const [querySearch, setQuerySearch] = useState('')
-    const [resultantSearch, setQueryResultantSearch] = useState<LaunchSchema[]>()
+    const { launchData, launchLoading,handleSearchResult, resultantSearch } = useLaunchHook({})
 
-    const handleSearch = ((event: any) =>{
-        
-        setQuerySearch(event.target.value)
-        const filteredResults =  launchData?.filter((launches: LaunchSchema)=> launches.name.toLocaleLowerCase().includes(querySearch.toLocaleLowerCase()))
-        setQueryResultantSearch(filteredResults)
-    })
-  
-    useEffect(()=>{
-        if(launchData){
-            setQueryResultantSearch(launchData)
-        }
-    },[launchData])
-
-    if(!launchLoading){
+    if(!launchData){
         return null
     }
     
     return (
         <>
 
-            <div className="bg-black w-full h-full text-white">
-                <div className="flex flex-row justify-end px-20 py-2">
-                    {!showSearch && 
-                    <SEARCH_GLASS stroke="white"  onClick={() => {
-                        setShowSearch(true)
-                    }} />}
-
-
-                    {showSearch && <input
-                        name="search"
-                        type="text"
-                        placeholder="search by name"
-                        className="bg-transparent border"
-                        onChange={handleSearch}
-                    />}
-                </div>
-
+            <div className="flex flex-col  w-full h-full text-white gap-y-2">
+                
+            <SearchBar searchData={launchData} onSearchResult={handleSearchResult}/>
                 <div className="grid grid-cols-1 md:grid-cols-2 mx-20 gap-20 ">
 
                     {resultantSearch?.map((launches: LaunchSchema) =>
