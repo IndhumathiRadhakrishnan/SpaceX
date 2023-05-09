@@ -15,7 +15,7 @@ function Rockets() {
     if (rocketLoading) {
         return (<Loading />)
     }
-    if (!resultantSearch && searchLoading) {
+    if (!resultantSearch.length && searchLoading) {
         return (<NothingFound />)
     }
     return (
