@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { ReactComponent as SpaceXSvg } from '../Assets/spacex.svg';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 function NavbarMenu() {
-
+    const navigate = useNavigate()
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     const menuStyle = {
         navLink: "text-gray-400 hover:text-white focus:text-white ",
@@ -16,7 +16,7 @@ function NavbarMenu() {
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
 
-                        <SpaceXSvg className="h-10 w-48" />
+                        <SpaceXSvg className="h-10 w-48" onClick={()=>{navigate('/')}} />
 
                         <button
                             className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"

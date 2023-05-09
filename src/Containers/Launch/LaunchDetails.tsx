@@ -32,7 +32,6 @@ function LaunchDetails() {
                 <div className="grid grid-cols-1 md:grid-cols-2 py-10">
                     <ImageHolder image={launchDetails.links.flickr.original[0] ? launchDetails.links.flickr.original[0] : undefined} className="w-full h-[30rem]" />
                     <ImageHolder image={launchDetails.links.patch.large ? launchDetails.links.patch.large : undefined} className="w-full h-[30rem]" />
-                    <div>Failures</div> <div>Crew</div>
                 </div>
                 
             </div>

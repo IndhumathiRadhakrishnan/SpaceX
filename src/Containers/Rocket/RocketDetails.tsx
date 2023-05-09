@@ -43,14 +43,14 @@ function RocketDetails() {
 
             <div className="grid grid-cols-1 md:grid-cols-4 md:justify-center mx-20 gap-20 content-center justify-center">
 
-                <div className=" flex flex-row justify-center items-center">
+                <div className=" flex md:flex-row sm:flex-col xs:flex-col justify-center items-center">
                     <div className="rounded-full h-20 w-20 border  p-2 flex text-2xl justify-center items-center">1</div>
                     <RIGHT_ARROW stroke="white" className="hidden md:block animate-spin translate-x-10 h-10 w-10" />
                     <DOWN_ARROW stroke="white" className="block md:hidden animate-spin translate-y-10 h-10 w-10" />
                 </div>
                 <StageDetails stageDetails={rocketDetails.first_stage} />
 
-                <div className=" flex flex-row justify-center items-center">
+                <div className=" flex md:flex-row sm:flex-col xs:flex-col justify-center items-center">
                     <div className="rounded-full h-20 w-20 border  p-2 flex text-2xl justify-center items-center">2</div>
                     <RIGHT_ARROW stroke="white" className="hidden md:block animate-spin translate-x-10 h-10 w-10" />
                     <DOWN_ARROW stroke="white" className="block md:hidden animate-spin translate-y-10 h-10 w-10" />
