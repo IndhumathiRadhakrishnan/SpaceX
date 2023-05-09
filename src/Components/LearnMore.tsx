@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { ReactComponent as LINK } from '../Assets/link-round-1109-svgrepo-com.svg'
+import { ReactComponent as LINK } from '../Assets/link-round.svg'
 function LearnMore({ navigation, appNavigate }: { navigation: string, appNavigate: boolean }) {
 
     const navigate = useNavigate()

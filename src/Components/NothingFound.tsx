@@ -1,4 +1,4 @@
-import { ReactComponent as NotFoundSvg } from "../Assets/not-graded-svgrepo-com.svg";
+import { ReactComponent as NotFoundSvg } from "../Assets/not-graded.svg";
 function NothingFound(){
   
     return (

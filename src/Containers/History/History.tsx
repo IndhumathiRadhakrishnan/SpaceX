@@ -1,6 +1,6 @@
 import { HistorySchema } from "../../Models/history.model"
 import { formatDateToTimezone, formatTimeToTimezone } from "../../Utils/dateTime"
-import { ReactComponent as CALENDER } from '../../Assets/monthly-calendar-svgrepo-com.svg'
+import { ReactComponent as CALENDER } from '../../Assets/calender.svg'
 import LearnMore from "../../Components/LearnMore"
 import { useHistoryHook } from "../../Hooks/historyHook"
 import Loading from "../../Components/Loading"

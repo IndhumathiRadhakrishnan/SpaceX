@@ -5,8 +5,8 @@ import RocketConfiguration from "./RocketConfigurations"
 import { useRocketHook } from "../../Hooks/rocketHook"
 import Loading from "../../Components/Loading"
 import NothingFound from "../../Components/NothingFound"
-import { ReactComponent as RIGHT_ARROW } from '../../Assets/iconmonstr-arrow-right-thin.svg'
-import { ReactComponent as DOWN_ARROW } from '../../Assets/iconmonstr-arrow-down-thin.svg'
+import { ReactComponent as RIGHT_ARROW } from '../../Assets/arrow-right.svg'
+import { ReactComponent as DOWN_ARROW } from '../../Assets/arrow-down.svg'
 
 
 function RocketDetails() {
