@@ -5,27 +5,24 @@ import Rockets from './Containers/Rocket/Rockets';
 import Launches from './Containers/Launch/Launches';
 import History from './Containers/History/History';
 import Home from './Containers/Landing/Home'
-import Navbar from './Components/NavBar';
+import Navbar from './Components/Navbar';
 import RocketDetails from './Containers/Rocket/RocketDetails';
 import LaunchDetails from './Containers/Launch/LaunchDetails';
-
 function App() {
   return (
-     <BrowserRouter>
-        <Routes>
-     
-          <Route path=''element ={<Navbar/>} >
+    <BrowserRouter>
+      <Routes>
+        <Route path='' element={<Navbar />} >
           <Route path="/" element={<Home />} />
           <Route path="/history" element={<History />} />
           <Route path="/launches" element={<Launches />} />
           <Route path="/rockets" element={<Rockets />} />
           <Route path="/launches/:id" element={<LaunchDetails />} />
           <Route path="/rockets/:id" element={<RocketDetails />} />
-         </Route>
-        </Routes>
-      </BrowserRouter>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
-
 }
 
 export default App;

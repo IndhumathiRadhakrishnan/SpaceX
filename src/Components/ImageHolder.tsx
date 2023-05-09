@@ -1,17 +1,22 @@
 
+interface ImageHolderPropType{
+  image?: any
+  className?: string
+}
 
-function ImageHolder({image, className = 'w-full h-[20rem]  md:h-[24rem]'}: {image?: any, className?: string}) {
+function ImageHolder(props: ImageHolderPropType) {
+  const { image, className } = props
 
   if (image) {
-
     return (
-        <img className={className} src={image} alt=""  />
+      <img className={className} src={image} alt="defaultImage" />
     )
-  } else  {
-
+  } else {
     return (
-         <img className={className}  alt=""src={require('../Assets/image1.jpg')} />
+      <img className={className} alt="defaultImage" src={require('../Assets/image1.jpg')} />
+
     )
   }
 }
 export default ImageHolder
+

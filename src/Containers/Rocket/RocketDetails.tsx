@@ -3,22 +3,26 @@ import ImageHolder from "../../Components/ImageHolder"
 import StageDetails from "./StageDetails"
 import RocketConfiguration from "./RocketConfigurations"
 import { useRocketHook } from "../../Hooks/rocketHook"
+import Loading from "../../Components/Loading"
+import NothingFound from "../../Components/NothingFound"
 
 
 function RocketDetails() {
 
     const { id } = useParams()
-    const { rocketDetails, rocketDetailsLoading } = useRocketHook({id})
-    
+    const { rocketDetails, rocketDetailsLoading } = useRocketHook({ id })
 
+    if (rocketDetailsLoading) {
+        return (<Loading />)
+    }
     if (!rocketDetails) {
-        return null;
+        return (<NothingFound />)
     }
 
-    return ( 
+    return (
         <div className="bg-black w-full h-full text-white flex flex-col gap-y-10">
-            <div className={`grid grid-cols-1 md:grid-cols-${rocketDetails?.flickr_images.length} md:justify-center mx-20 gap-20 content-center justify-center`}>
-                {rocketDetails?.flickr_images.map((images: string) =>
+            <div className={`grid grid-cols-1 md:grid-cols-${rocketDetails?.flickr_images.length > 3 ? 4 : rocketDetails?.flickr_images.length} md:justify-center mx-20 gap-20 content-center justify-center`}>
+                {rocketDetails?.flickr_images.slice(0, 4).map((images: string) =>
                     <ImageHolder className="w-full h-[25rem] hover:scale-110  object-cover rounded-lg " image={images} />
                 )}
             </div>
@@ -39,12 +43,12 @@ function RocketDetails() {
                     <div className="h-0.5 w-full bg-white"></div>
                     <div className="rounded-full h-20 w-20 border bg-gray-400 p-2 flex justify-center text-2xl items-center">1</div>
                     <div className="h-0.5 w-full bg-white"></div>
-                    <hr className="bg-red-200"/>
+                    <hr className="bg-red-200" />
                     {/* <RIGHT_ARROW stroke="white"  className="animate-spin translate-x-10 h-10 w-10"  /> */}
                 </div>
-                <StageDetails  stageDetails={rocketDetails.first_stage} />
+                <StageDetails stageDetails={rocketDetails.first_stage} />
                 <div className=" flex justify-center items-center">
-                <div className="h-0.5 w-full bg-white"></div>
+                    <div className="h-0.5 w-full bg-white"></div>
                     <div className="rounded-full h-20 w-20 border bg-gray-400 p-2 flex text-2xl justify-center items-center">2</div>
                     <div className="h-0.5 w-full bg-white"></div>
 
