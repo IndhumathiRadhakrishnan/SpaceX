@@ -8,9 +8,11 @@ import Home from './Containers/Landing/Home'
 import Navbar from './Components/Navbar';
 import RocketDetails from './Containers/Rocket/RocketDetails';
 import LaunchDetails from './Containers/Launch/LaunchDetails';
+import ScrollToTop from './Components/ScrollToTop';
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <Routes>
         <Route path='' element={<Navbar />} >
           <Route path="/" element={<Home />} />
