@@ -9,11 +9,11 @@ function ImageHolder(props: ImageHolderPropType) {
 
   if (image) {
     return (
-      <img className={className} src={image} alt="defaultImage" />
+      <img className={className} src={image} alt="defaultImage" loading="lazy"/>
     )
   } else {
     return (
-      <img className={className} alt="defaultImage" src={require('../Assets/image1.jpg')} />
+      <img className={className} alt="defaultImage" loading="lazy" src={require('../Assets/image1.jpg')} />
 
     )
   }

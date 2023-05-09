@@ -10,17 +10,17 @@ import { useSearchHook } from "../../Hooks/searchHook";
 function Rockets() {
     const navigate = useNavigate();
     const { rocketData, rocketLoading } = useRocketHook({})
-    const { resultantSearch, handleSearchResult } = useSearchHook({ searchDetails: rocketData, key: 'name' });
+    const { resultantSearch, handleSearchResult, searchLoading } = useSearchHook({ searchDetails: rocketData, key: 'name' });
 
     if (rocketLoading) {
         return (<Loading />)
     }
-    if (!resultantSearch && !rocketLoading && rocketData) {
+    if (!resultantSearch && searchLoading) {
         return (<NothingFound />)
     }
     return (
         <div className="flex flex-col w-full h-full text-white gap-y-2">
-            <SearchBar searchData={resultantSearch} onSearchResult={handleSearchResult} />
+            <SearchBar onSearchResult={handleSearchResult} />
             <div className="grid grid-cols-1 md:grid-cols-2 mx-20 gap-20 ">
 
                 {resultantSearch?.map((rockets: RocketSchema) =>
