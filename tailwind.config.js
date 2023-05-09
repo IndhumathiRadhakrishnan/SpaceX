@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: { max: '640px' }
+      },
       keyframes: {
         floating: {
           '0%': {
@@ -17,11 +20,15 @@ module.exports = {
             transform: 'translateY(0)',
           },
         },
+        typing: {
+          from: { width: '50%' },
+          to: { width: '100%' },
+        },
       },
       animation: {
         floating: 'floating 1s ease-in-out normal',
+        typing: 'typing 1s steps(20, end) both',
       },
-      
     },
   },
 

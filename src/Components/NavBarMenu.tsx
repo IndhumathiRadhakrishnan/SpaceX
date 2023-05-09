@@ -48,13 +48,13 @@ function NavbarMenu() {
                     >
                         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto gap-4 text-white">
                             <li className="nav-item">
-                                <NavLink to={'/History'} className={(navData) => navData.isActive ? menuStyle.active : menuStyle.navLink}>History</NavLink>
+                                <NavLink to={'/history'} className={(navData) => navData.isActive ? menuStyle.active : menuStyle.navLink}>History</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to={'/Launches'} className={(navData) => navData.isActive ? menuStyle.active : menuStyle.navLink}>Launches</NavLink>
+                                <NavLink to={'/launches'} className={(navData) => navData.isActive ? menuStyle.active : menuStyle.navLink}>Launches</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to={'/Rockets'} className={(navData) => navData.isActive ? menuStyle.active : menuStyle.navLink}>Rockets</NavLink>
+                                <NavLink to={'/rockets'} className={(navData) => navData.isActive ? menuStyle.active : menuStyle.navLink}>Rockets</NavLink>
                             </li>
                         </ul>
                     </div>
