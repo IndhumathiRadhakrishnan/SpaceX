@@ -37,8 +37,6 @@ function StageDetails({  stageDetails }: {  stageDetails: any }) {
                             <span>Second Thrust</span><span className="">{stageDetails.thrust.kN + "kN (" + stageDetails.thrust.lbf + ")"}</span>
                         </div>
                     }
-
-                
             </div>
     )
 }
