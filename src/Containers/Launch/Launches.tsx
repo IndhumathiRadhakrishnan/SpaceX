@@ -15,13 +15,13 @@ function Launches() {
     
     const navigate = useNavigate();
     const { launchData, launchLoading, } = useLaunchHook({})
-    const { resultantSearch, handleSearchResult } = useSearchHook({ searchDetauls: launchData, key: 'name' });
+    const { resultantSearch, handleSearchResult } = useSearchHook({ searchDetails: launchData, key: 'name' });
     
 
     if(launchLoading){
         return <Loading />
     }
-    if (resultantSearch.length <=0 && launchData) {
+    if (launchData && resultantSearch.length <= 0 &&  !launchLoading) {
         return (<NothingFound />)
     }
     

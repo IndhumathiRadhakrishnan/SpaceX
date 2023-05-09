@@ -3,7 +3,7 @@ import { RocketSchema } from "../../Models/rocket.model"
 function RocketConfiguration({ rocketDetails, details }: { rocketDetails: RocketSchema, details: boolean }) {
     return (
         <div className="flex flex-col gap-y-10 mx-20">
-            <div className="text-6xl">{details ? rocketDetails.name : "Payload Configurations"}</div>
+            <div className="text-4xl">{details ? rocketDetails.name : "Payload Configurations"}</div>
             <div className="text-xl">{details ? rocketDetails.description : rocketDetails.company}</div>
 
             <div className="flex flex-col gap-4 ">

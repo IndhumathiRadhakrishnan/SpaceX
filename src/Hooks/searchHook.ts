@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 interface ISearchData<T> {
     key: keyof T;
-    searchDetauls: T[] | undefined;
+    searchDetails: T[] | undefined;
   }
   
   export const useSearchHook = <T>(props: ISearchData<T>) => {
-    const { key, searchDetauls = [] } = props; // add a default value to searchData
+    const { key, searchDetails = [] } = props; // add a default value to searchData
     const [resultantSearch, setQueryResultantSearch] = useState<T[]>([]);
 
     useEffect(()=>{
-      if(searchDetauls && searchDetauls.length > 0) {
-          setQueryResultantSearch(searchDetauls)
+      if(searchDetails && searchDetails.length > 0) {
+          setQueryResultantSearch(searchDetails)
       }
-    },[searchDetauls])
+    },[searchDetails])
   
     function handleSearchResult(results: string) {
-        const filteredResults = searchDetauls?.filter((item: T) => {
+        const filteredResults = searchDetails?.filter((item: T) => {
           const value = item[key];
           if (typeof value === "string") {
             return value.toLocaleLowerCase().includes(results.toLocaleLowerCase());

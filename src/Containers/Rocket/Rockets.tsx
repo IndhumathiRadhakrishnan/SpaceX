@@ -10,12 +10,12 @@ import { useSearchHook } from "../../Hooks/searchHook";
 function Rockets() {
     const navigate = useNavigate();
     const { rocketData, rocketLoading } = useRocketHook({})
-    const { resultantSearch, handleSearchResult } = useSearchHook({ searchDetauls: rocketData, key: 'name' });
+    const { resultantSearch, handleSearchResult } = useSearchHook({ searchDetails: rocketData, key: 'name' });
 
     if (rocketLoading) {
         return (<Loading />)
     }
-    if (!resultantSearch) {
+    if (!resultantSearch && !rocketLoading && rocketData) {
         return (<NothingFound />)
     }
     return (

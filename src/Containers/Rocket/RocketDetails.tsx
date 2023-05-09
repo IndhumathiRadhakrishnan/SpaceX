@@ -5,6 +5,8 @@ import RocketConfiguration from "./RocketConfigurations"
 import { useRocketHook } from "../../Hooks/rocketHook"
 import Loading from "../../Components/Loading"
 import NothingFound from "../../Components/NothingFound"
+import { ReactComponent as RIGHT_ARROW } from '../../Assets/iconmonstr-arrow-right-thin.svg'
+import { ReactComponent as DOWN_ARROW } from '../../Assets/iconmonstr-arrow-down-thin.svg'
 
 
 function RocketDetails() {
@@ -27,33 +29,34 @@ function RocketDetails() {
                 )}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 ">
                 <RocketConfiguration rocketDetails={rocketDetails} details={true} />
-                <ImageHolder className="object-cover" image={rocketDetails?.flickr_images[4] ? rocketDetails?.flickr_images[4] : undefined} />
+                <ImageHolder className="object-cover px-20" image={rocketDetails?.flickr_images[4] ? rocketDetails?.flickr_images[4] : undefined} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2">
-                <ImageHolder className="object-cover" image={rocketDetails?.flickr_images[5] ? rocketDetails?.flickr_images[5] : undefined} />
+                <ImageHolder className="object-cover px-20" image={rocketDetails?.flickr_images[5] ? rocketDetails?.flickr_images[5] : undefined} />
                 <RocketConfiguration rocketDetails={rocketDetails} details={false} />
             </div>
 
+            <div className="px-20 text-4xl">Stages</div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 md:justify-center mx-20 gap-20 content-center justify-center">
-                <div className=" flex justify-center items-center">
-                    <div className="h-0.5 w-full bg-white"></div>
-                    <div className="rounded-full h-20 w-20 border bg-gray-400 p-2 flex justify-center text-2xl items-center">1</div>
-                    <div className="h-0.5 w-full bg-white"></div>
-                    <hr className="bg-red-200" />
-                    {/* <RIGHT_ARROW stroke="white"  className="animate-spin translate-x-10 h-10 w-10"  /> */}
+
+                <div className=" flex flex-row justify-center items-center">
+                    <div className="rounded-full h-20 w-20 border  p-2 flex text-2xl justify-center items-center">1</div>
+                    <RIGHT_ARROW stroke="white" className="hidden md:block animate-spin translate-x-10 h-10 w-10" />
+                    <DOWN_ARROW stroke="white" className="block md:hidden animate-spin translate-y-10 h-10 w-10" />
                 </div>
                 <StageDetails stageDetails={rocketDetails.first_stage} />
-                <div className=" flex justify-center items-center">
-                    <div className="h-0.5 w-full bg-white"></div>
-                    <div className="rounded-full h-20 w-20 border bg-gray-400 p-2 flex text-2xl justify-center items-center">2</div>
-                    <div className="h-0.5 w-full bg-white"></div>
 
+                <div className=" flex flex-row justify-center items-center">
+                    <div className="rounded-full h-20 w-20 border  p-2 flex text-2xl justify-center items-center">2</div>
+                    <RIGHT_ARROW stroke="white" className="hidden md:block animate-spin translate-x-10 h-10 w-10" />
+                    <DOWN_ARROW stroke="white" className="block md:hidden animate-spin translate-y-10 h-10 w-10" />
                 </div>
                 <StageDetails stageDetails={rocketDetails.second_stage} />
+
             </div>
 
         </div>
