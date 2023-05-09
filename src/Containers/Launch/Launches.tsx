@@ -21,16 +21,16 @@ function Launches() {
     if(launchLoading){
         return <Loading />
     }
-    if (launchData && resultantSearch.length <= 0 &&  !launchLoading) {
+    if (launchData && resultantSearch.length < 0 &&  !launchLoading) {
         return (<NothingFound />)
     }
-    
+
     return (
         <div className="relative flex flex-col  h-full text-white gap-y-2">
 
             <SearchBar searchData={launchData} onSearchResult={handleSearchResult} />
             <div className="grid grid-cols-1 md:grid-cols-2 mx-20 gap-20 ">
-                {resultantSearch?.map((launches: LaunchSchema) =>
+                {resultantSearch?.filter(launch => launch.links.flickr?.original.length > 0).map((launches: LaunchSchema) =>
                     <div className="flex flex-col gap-y-2">
                         <ImageHolder className="w-full h-[20rem]  md:h-[24rem]  object-cover" image={launches.links.flickr.original[0] ? launches.links.flickr.original[0] : undefined} />
                         <div className="text-2xl">{formatDateToTimezone(launches.date_utc) + ' - ' + formatTimeToTimezone(launches.date_utc)}</div>
