@@ -33,7 +33,7 @@ function Launches() {
                 {resultantSearch?.filter(launch => launch.links.flickr?.original.length > 0).map((launches: LaunchSchema) =>
                     <div className="flex flex-col gap-y-2">
                         <ImageHolder className="w-full h-[20rem]  md:h-[24rem]  object-cover" image={launches.links.flickr.original[0] ? launches.links.flickr.original[0] : undefined} />
-                        <div className="text-2xl">{formatDateToTimezone(launches.date_utc) + ' - ' + formatTimeToTimezone(launches.date_utc)}</div>
+                        <div className="font-normal">{formatDateToTimezone(launches.date_utc) + ' - ' + formatTimeToTimezone(launches.date_utc)}</div>
                         <div className="flex flex-row gap-4 text-3xl ">
                             <span className="text-3xl">{launches.name} - {launches.flight_number}</span>
                         </div>

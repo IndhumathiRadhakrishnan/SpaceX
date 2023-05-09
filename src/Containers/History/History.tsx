@@ -22,9 +22,9 @@ function History() {
     }
 
     return (
-        <div className="flex flex-col  h-full w-full text-white gap-y-2">
+        <div className="flex flex-col  h-full w-full text-white gap-y-2 mb-4">
             <SearchBar searchData={resultantSearch} onSearchResult={handleSearchResult} />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-20 mx-20 content-center justify-center ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mx-20 content-center justify-center ">
                 {resultantSearch?.map((history: HistorySchema) =>
                     <div className="flex flex-col gap-y-2 items-center w-full p-4 text-center hover:bg-zinc-400 hover:bg-opacity-20 rounded-lg shadow sm:p-8 hover:scale-105 transition-all duration-300 group" >   
                     <div className="text-3xl line-clamp-1">{history.title}</div>

@@ -23,10 +23,10 @@ function LaunchDetails() {
 
                 <iframe className=" w-full h-[30rem]" title="launchVideo" src={launchDetails?.links?.webcast?.includes('watch?v=') ? launchDetails?.links?.webcast?.replace("watch?v=", "embed/") : 'https://www.youtube.com/embed/' + launchDetails?.links?.youtube_id} ></iframe>
 
-                <div className="flex flex-col gap-4">
-                    <span className=" text-3xl">{formatDateToTimezone(launchDetails.date_utc)}</span>
-                    <span className=" text-6xl">{launchDetails.name}</span>
-                    <span className="text-xl">{launchDetails.details}</span>
+                <div className="flex flex-col gap-4 py-3">
+                    <span className=" text-2xl">{formatDateToTimezone(launchDetails.date_utc)}</span>
+                    <span className=" text-4xl">{launchDetails.name}</span>
+                    <span className="font-normal text-white">{launchDetails.details}</span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 py-10">

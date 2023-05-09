@@ -10,9 +10,9 @@ function Home(){
     return (
         <div className="flex flex-col w-full">
             <div className=" flex items-center justify-center text-black relative h-[100vh]">
-                <ImageHolder className="object-cover z-0 absolute" image={require('../../Assets/107763.jpg')} />
+                <ImageHolder className="object-cover h-full w-full z-0 absolute" image={require('../../Assets/107763.jpg')} />
                 <div className="absolute">Launches</div>
-                {/* <ImageHolder className="absolute" image={require('../../Assets/man.png')}/> */}
+       
             </div>
             {imageLoadedData && imageLoadedData.slice(0, 4).map((launch: LaunchSchema) =>
                 <div className="relative h-[100vh] w-full">

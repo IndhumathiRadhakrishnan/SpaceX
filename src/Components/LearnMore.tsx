@@ -8,13 +8,13 @@ function LearnMore({ navigation, appNavigate }: { navigation: string, appNavigat
     };
 
     return (
-        <div className="flex flex-row py-2 items-center gap-x-1 " onClick={() => {
+        <button className="flex flex-row py-2 items-center gap-x-1 " onClick={() => {
             appNavigate ?
                 navigate(navigation) :
                 handleOpenArticle(navigation)
         }}>
             <span className=" border-b border-white text-white">Learn More</span><LINK stroke-width="0.2" className=" w-4 h-4" />
-        </div>
+        </button>
     )
 }
 
