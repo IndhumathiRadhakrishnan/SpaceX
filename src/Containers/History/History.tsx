@@ -12,18 +12,18 @@ import { useSearchHook } from "../../Hooks/searchHook"
 function History() {
 
     const { historyData, historyLoading} = useHistoryHook()
-    const { resultantSearch, handleSearchResult } = useSearchHook({ searchDetails: historyData, key: 'title' });
+    const { resultantSearch, handleSearchResult, searchLoading } = useSearchHook({ searchDetails: historyData, key: 'title' });
 
     if (historyLoading) {
         return (<Loading />)
     }
-    if (historyData &&  resultantSearch.length <=0 && !historyLoading) {
+    if (!resultantSearch.length && searchLoading) {
         return (<NothingFound />)
     }
 
     return (
         <div className="flex flex-col  h-full w-full text-white gap-y-2 mb-4">
-            <SearchBar searchData={resultantSearch} onSearchResult={handleSearchResult} />
+            <SearchBar onSearchResult={handleSearchResult} />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 mx-20 content-center justify-center ">
                 {resultantSearch?.map((history: HistorySchema) =>
                     <div className="flex flex-col gap-y-2 items-center w-full p-4 text-center hover:bg-zinc-400 hover:bg-opacity-20 rounded-lg shadow sm:p-8 hover:scale-105 transition-all duration-300 group" >   

@@ -15,20 +15,20 @@ function Launches() {
     
     const navigate = useNavigate();
     const { launchData, launchLoading, } = useLaunchHook({})
-    const { resultantSearch, handleSearchResult } = useSearchHook({ searchDetails: launchData, key: 'name' });
+    const { resultantSearch, handleSearchResult, searchLoading } = useSearchHook({ searchDetails: launchData, key: 'name' });
     
 
     if(launchLoading){
         return <Loading />
     }
-    if (launchData && resultantSearch.length < 0 &&  !launchLoading) {
+    if (!resultantSearch.length && searchLoading) {
         return (<NothingFound />)
     }
 
     return (
         <div className="relative flex flex-col  h-full text-white gap-y-2">
 
-            <SearchBar searchData={launchData} onSearchResult={handleSearchResult} />
+            <SearchBar onSearchResult={handleSearchResult} />
             <div className="grid grid-cols-1 md:grid-cols-2 mx-20 gap-20 ">
                 {resultantSearch?.filter(launch => launch.links.flickr?.original.length > 0).map((launches: LaunchSchema) =>
                     <div className="flex flex-col gap-y-2">

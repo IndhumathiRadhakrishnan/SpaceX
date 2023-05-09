@@ -12,6 +12,7 @@ function Home(){
             <div className=" flex items-center justify-center text-black relative h-[100vh]">
                 <ImageHolder className="object-cover h-full w-full z-0 absolute" image={require('../../Assets/107763.jpg')} />
                 <div className="absolute">Launches</div>
+                <ImageHolder className="absolute h-96 w-96 left-0 transition-all animate-floating" image={require('../../Assets/shadow.png')}/>
        
             </div>
             {imageLoadedData && imageLoadedData.slice(0, 4).map((launch: LaunchSchema) =>

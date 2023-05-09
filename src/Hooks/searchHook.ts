@@ -7,10 +7,12 @@ interface ISearchData<T> {
   export const useSearchHook = <T>(props: ISearchData<T>) => {
     const { key, searchDetails = [] } = props; // add a default value to searchData
     const [resultantSearch, setQueryResultantSearch] = useState<T[]>([]);
+    const [searchLoading, setSearchLoading] = useState(false)
 
     useEffect(()=>{
       if(searchDetails && searchDetails.length > 0) {
           setQueryResultantSearch(searchDetails)
+          setSearchLoading(true)
       }
     },[searchDetails])
   
@@ -25,5 +27,5 @@ interface ISearchData<T> {
         setQueryResultantSearch(filteredResults);
       }
   
-    return { resultantSearch, handleSearchResult };
+    return { resultantSearch, handleSearchResult, searchLoading };
   };
